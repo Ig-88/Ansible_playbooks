@@ -1,0 +1,26 @@
+---
+- hosts: jsa
+  vars:
+    ansible_ssh_user: root
+    ansible_ssh_pass: Summit2017
+    #- passhash: 'dca584c5270060cc4ff00ce37c9be652eb54332571eb04a827bb79f18d282800d25f8d99fb7344ecfcbf62545026caf500ee1c02bda5f8ec9a4763c3bf372019'
+  tasks:
+  - name: add users and passwords
+    user:
+      name: "{{ item }}"
+      update_password: always
+      shell: /bin/bash
+      createhome: yes
+      #groups: sudo
+      password: $6$05VmSwim$NCeDDdiWsciYP3RtrUd6JjmYzj01XBnjZdqg9iH/Xs2/Jjvi6IphbsMIEVxABB60KfvLu9OPH.X6xkRsxRWCy.
+    with_items:
+       - student1
+       - student2
+       - student3
+       - student4
+       - student5
+       - student6
+       - student7
+       - student8
+       - student9
+       - student10
